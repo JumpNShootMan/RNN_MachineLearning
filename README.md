@@ -138,6 +138,13 @@ Seguido a esto, un nodo de salida aplica un clasificador de secuencia en donde s
 
 ### Modelos de reconocimiento de voz más ejemplo por Kumar & Aggarwal (2020)
 
+El autor propone una implementación automática de reconocimiento de voz usando vectores característicos con redes neuronales recurrentes.
+El entrenamiento y decodificación son computacionalmente complejos, por ello para reducir ese costo computacional añade un nodo fuera de la lista corta ( OOS), que contiene la mayoría de las palabras frecuentes. Se usa el algoritmo de Back-propagation through time para entrenar a la red. Además, la salida es ajustada a partir de un numero de iteraciones, para evitar los problemas frecuentes de las redes RNN.
+
+En los resultados se dividió la data en 80 oradores de entrenamiento y 20 de prueba. Se realizaron múltiples combinaciones para elegir los mejores y las redes RNN obtuvieron el mejor rendimiento de hasta en un 87,96%.
+
+![](https://i.gyazo.com/49d369036c5cd9734cc087b95d1d3545.png)
+
 
 ### Modelos generativos más ejemplo por Hernandez et al. (2020)
 
