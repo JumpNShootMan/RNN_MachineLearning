@@ -1,4 +1,8 @@
 # Tarea Académica 2 - Estudio de las Redes Neuronales Recurrentes
+
+## El archivo a ser evaluado es el colab adjunto en el repositorio, tal como se indica en el enunciado. La finalidad del readme fue para organizarnos e ir formando una plantilla de avances mientras acababamos el colab.
+
+
 ## Curso - Machine Learning
 ### Elaborado por:
 - Daniel Núñez
@@ -134,10 +138,20 @@ Seguido a esto, un nodo de salida aplica un clasificador de secuencia en donde s
 
 ### Modelos de reconocimiento de voz más ejemplo por Kumar & Aggarwal (2020)
 
-Esta aplicación de RNN es muy interesante, ya que se concentra en generar nueva información a partir de los patrones que ha identificado la red. La generación de nueva información a partir de 
 
 ### Modelos generativos más ejemplo por Hernandez et al. (2020)
 
+Esta aplicación de RNN es muy interesante, ya que se concentra en generar nueva información a partir de los patrones que ha identificado la red. La generación de nueva información a partir de reglas definidas manualmente nunca fue considerado una buena práctica, ya que no siempre se pueden asignar reglas, incluso aunque existan usuarios expertos en el tema. Es por esto que la generación de nueva información en base a patrones captados dinámicamente por un modelo de RNN es tan revolucionaria; puede asemejarse como nunca antes a datos reales.
+
+Para el modelo generativo de los autores, la innovación proviene de la implementación de un modelo generativo basado en RNN bidireccionales para la generación de distintas señales biomédicas, como por ejemplo las de electrocardiogramas o eleectroencefalogramas. Estos datos pueden generarse para pacientes o eventos específicos, y puede repetirse el proceso para generar incluso más datos sintéticos.
+
+Para iniciar, se lleva a cabo una etapa de preprocesamiento de datos, en donde se puede reducir el ruido de señales en base a una técnica de transformación de ondas discretas. Luego, se utiliza Z-Score para eliminar compensación y luego se segmenta y clusteriza la información de acuerdo a las anotaciones de la base de datos utilizada. En la etapa final del preprocesamiento se ajustan los tamaños de las señales para que todos tengan el mismo y estas se exportan para la RNN bidireccional (BiRNN).
+
+La BiRNN combina dos RNN, en donde una analiza el dato desde el inicio y se mueve adelante en el tiempo y la otra comienza desde el final y analiza retrocediendo en el tiempo.
+
+![Alt text](Imagenes/BiRNN.png?raw=true "Arquitectura BiRNN")
+
+Las BiRNN van a aprender de secuencias que definen en una lista que describe el dato de entrada y la salida en un tiempo definido. Para el ejercicio se dividen las señales en dos grupos, en donde a uno de estos grupos se le agrega ruido a las señales. De esta manera, las dos señales atraviesan la capa de BiRNN para que se identifiquen secuencias que generen una salida de señales sintéticas: información nueva a partir de patrones encontrados para casos individuales.
 
 
 ## 5. Conclusiones del trabajo
